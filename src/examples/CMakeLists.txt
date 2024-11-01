@@ -30,6 +30,11 @@ add_executable(gpio_example gpio_example.cpp)
 set_target_properties(gpio_example PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 target_link_libraries(gpio_example LimeSuite)
 
+add_executable(square_wave square_wave.cpp)
+set_property(TARGET square_wave PROPERTY CXX_STANDARD 17)
+set_target_properties(square_wave PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+target_link_libraries(square_wave LimeSuite rerun_sdk)
+
 add_executable(basicTX basicTX.cpp)
 set_target_properties(basicTX PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 target_link_libraries(basicTX LimeSuite)

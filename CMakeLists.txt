@@ -1,9 +1,14 @@
 ########################################################################
 ## Create lime-suite project
 ########################################################################
-cmake_minimum_required(VERSION 3.1.3)
+cmake_minimum_required(VERSION 3.16...3.27)
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release;RelWithDebInfo" CACHE STRING INTERNAL FORCE)
 project("LimeSuite")
+
+include(FetchContent)
+FetchContent_Declare(rerun_sdk URL
+    https://github.com/rerun-io/rerun/releases/latest/download/rerun_cpp_sdk.zip)
+FetchContent_MakeAvailable(rerun_sdk)
 
 option(BUILD_SHARED_LIBS "Build the shared library" ON)
 option(ENABLE_NEW_GAIN_BEHAVIOUR "Enable new gain functionality" OFF)
