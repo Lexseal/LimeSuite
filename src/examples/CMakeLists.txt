@@ -35,6 +35,16 @@ set_property(TARGET square_wave PROPERTY CXX_STANDARD 17)
 set_target_properties(square_wave PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 target_link_libraries(square_wave LimeSuite rerun_sdk)
 
+add_executable(jam jam.cpp)
+set_property(TARGET jam PROPERTY CXX_STANDARD 17)
+set_target_properties(jam PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+target_link_libraries(jam LimeSuite)
+
+add_executable(record_play record_play.cpp)
+set_property(TARGET record_play PROPERTY CXX_STANDARD 17)
+set_target_properties(record_play PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+target_link_libraries(record_play LimeSuite)
+
 add_executable(basicTX basicTX.cpp)
 set_target_properties(basicTX PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 target_link_libraries(basicTX LimeSuite)
